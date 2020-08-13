@@ -1,4 +1,5 @@
 function Email() {
+  //LLenar eel formulario
   $.ajax({
     url:'datos.php',
      type: 'POST',
@@ -7,6 +8,7 @@ function Email() {
       console.log(res);
 
       var etiquetas="";
+       //Asigna las preguntas que estan en la base de datos
       for (var i = 1; i < js.length; i++) {
               etiquetas+="<label for=''>" +i+") "+js[i].Pregunta+"</label><br>"+
               "<input type='radio' id='Si"+i+"' name='gender"+i+"' value='SI'><label>Si</label><br>"+
@@ -16,7 +18,7 @@ function Email() {
      }
   })
 }
-
+//Valida las respuestas
 function Validar() {
   $.ajax({
     url:'datos.php',
@@ -52,6 +54,7 @@ function Validar() {
           resultado=resultado+1;
       }
       console.log(resultado);
+   // Si alguna respuesta es incorrecta envia el dato para generar el correo que se enviara
       if(resultado<5){
         window.alert(":(");
       $.ajax({
