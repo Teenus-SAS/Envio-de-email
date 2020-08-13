@@ -1,5 +1,5 @@
-//Librerias necesarias para generar el email
 <?php
+//Librerias necesarias para generar el email
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 require 'Phpmailer/Exception.php';
